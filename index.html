@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cipluk Feature</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: pink;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .hidden {
+      display: none;
+    }
+    .typing {
+      font-size: 14px;
+      color: black;
+      white-space: pre-wrap;
+      text-align: justify;
+      margin: 10px 0;
+    }
+    .photo-container {
+      margin: 20px 0;
+    }
+    .photo-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>FOR MY CIPLUUK💖!!</h1>
+  
+  <button class="button" id="textButton">di baca dong hehe...</button>
+  <div class="typing hidden" id="textContent"></div>
+
+  <button class="button" id="photoButton">DI PENCET YAHH... 😖💞</button>
+  <div class="photo-container hidden" id="photoContent">
+    <img src="https://cdn.discordapp.com/attachments/800285374085201930/1307743619632992306/IMG-20240721-WA0027.jpg?ex=673b6aa7&is=673a1927&hm=ce8abac9ed6d57d8aa86ce179c9ae815fb56bd4fbd8df0754489f618a6086e21&" alt="Cipluk Photo">
+  </div>
+
+  <script>
+    // Animasi mengetik
+    const textButton = document.getElementById("textButton");
+    const textContent = document.getElementById("textContent");
+    const text = `Hai! Chamomile, eh Caca, eh Caca itu nama panggilan dari mama, maksudku sayang, ehh kok sayang, Chamomile? Begitu kah? Atau panggil Cha aja? Apa cipluk? Hehehe...`;
+
+    textButton.addEventListener("click", () => {
+      textContent.innerText = "";
+      textContent.classList.remove("hidden");
+      let i = 0;
+      const typing = setInterval(() => {
+        if (i < text.length) {
+          textContent.innerText += text[i];
+          i++;
+        } else {
+          clearInterval(typing);
+        }
+      }, 50); // Kecepatan mengetik
+    });
+
+    // Menampilkan foto
+    const photoButton = document.getElementById("photoButton");
+    const photoContent = document.getElementById("photoContent");
+
+    photoButton.addEventListener("click", () => {
+      photoContent.classList.remove("hidden");
+      setTimeout(() => {
+        photoContent.classList.add("hidden");
+      }, 5000); // Tampilkan selama 5 detik
+    });
+  </script>
+
+</body>
+</html>
